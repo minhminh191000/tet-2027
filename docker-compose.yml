@@ -1,0 +1,8 @@
+services:
+  tet2027:
+    build: .
+    container_name: tet2027
+    restart: unless-stopped
+    # Chỉ mở trên localhost — Cloudflare Tunnel sẽ trỏ vào đây
+    ports:
+      - "127.0.0.1:8027:80"

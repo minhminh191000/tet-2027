@@ -1,0 +1,11 @@
+# Thêm khối dưới đây vào file config của tunnel "home"
+# (thường là ~/.cloudflared/config.yml hoặc /etc/cloudflared/config.yml),
+# đặt TRƯỚC dòng catch-all "- service: http_status:404".
+
+ingress:
+  - hostname: tet.migor.site
+    service: http://localhost:8027
+
+  # ... các hostname đang có (migor.site, app.migor.site, ...) giữ nguyên ...
+
+  - service: http_status:404
